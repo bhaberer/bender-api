@@ -1,7 +1,7 @@
 require 'grape'
 require 'countdowns'
 
-module Bender
+module Bender::Countdowns
   class API < Grape::API
     format :json
     prefix :api
