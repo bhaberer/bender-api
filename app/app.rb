@@ -1,16 +1,11 @@
 require 'grape'
+require_relative './plugins/countdowns'
 
 module Bender
   class API < Grape::API
     format :json
     prefix :api
-
-    resource :countdowns do
-      desc 'Countdown till Pax'
-      get :pax do
-        { text: 'So many days' }
-      end
-    end
+    mount Countdowns
 
     desc 'Countdown till Pax'
     get '/' do
