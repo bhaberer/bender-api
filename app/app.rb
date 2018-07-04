@@ -6,7 +6,7 @@ module Bender::Countdowns
     format :json
     prefix :api
 
-    mount Countdowns => '/countdowns'
+    mount Bender::Countdowns => '/countdowns'
 
     desc 'Countdown till Pax'
     get '/' do
