@@ -6,4 +6,11 @@ module Bender
     format :json
     prefix :api
   end
+
+  resource :countdown do
+    desc 'Countdown till Pax'
+      get :pax do
+        'Foo'
+      end
+  end
 end
