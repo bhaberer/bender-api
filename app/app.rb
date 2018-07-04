@@ -1,5 +1,5 @@
 require 'grape'
-require_relative './plugins/countdowns'
+require_relative 'plugins/countdowns'
 
 module Bender
   class API < Grape::API
