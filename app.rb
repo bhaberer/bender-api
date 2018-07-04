@@ -1,15 +1,13 @@
+api = File.expand_path('../api', __FILE__)
+$LOAD_PATH.unshift(api) unless $LOAD_PATH.include?(api)
+
 require 'grape'
-require_relative 'plugins/countdowns'
+require 'plugins/countdowns'
 
 module Bender
   class API < Grape::API
     format :json
     prefix :api
     mount Countdowns
-
-    desc 'Countdown till Pax'
-    get '/' do
-      'Foo'
-    end
   end
 end
