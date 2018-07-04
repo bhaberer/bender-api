@@ -5,12 +5,12 @@ module Bender
     version 'v1', using: :header, vendor: 'twitter'
     format :json
     prefix :api
-  end
 
-  resource :countdown do
-    desc 'Countdown till Pax'
+    resource :countdown do
+      desc 'Countdown till Pax'
       get :pax do
         'Foo'
       end
+    end
   end
 end
