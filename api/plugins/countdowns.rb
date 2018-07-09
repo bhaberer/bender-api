@@ -12,7 +12,11 @@ module Plugin
     resource :countdowns do
       desc 'Countdown till Pax'
       get :pax do
-        { text: 'So many days' }
+        next_pax = get_next_pax()
+        { name: next_pax.name,
+          date: next_pax.date,
+          estimated: pax.estimated,
+          text: get_pax_time_string(pax) }
       end
 
       build_paxes.each do |pax|
