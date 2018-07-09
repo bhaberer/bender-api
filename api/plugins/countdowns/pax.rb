@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require './api/plugins/helpers'
 require 'time'
 
 # Class representation of a Pax
@@ -14,6 +15,6 @@ class Pax
   end
 
   def time_till
-    { date: @date, name: @name }
+    Helpers.time_format(@date - Time.now, [:days])
   end
 end

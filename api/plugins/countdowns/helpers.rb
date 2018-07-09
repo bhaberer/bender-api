@@ -4,7 +4,7 @@ require './api/plugins/countdowns/pax'
 require 'json'
 require 'time'
 
-PAX_FILE = 'api/plugins/countdowns/pax.json'.freeze
+PAX_FILE = 'api/plugins/countdowns/pax.json'
 
 def json_file_to_hash(file_name)
   file = File.read(file_name)
@@ -27,4 +27,18 @@ def get_next_pax(pax_type: nil)
   paxes = paxes.delete_if { |pax| pax.date < Time.now }
   paxes.sort! { |a, b| a.date <=> b.date }
   paxes.first
+end
+
+def get_pax_time_string(pax)
+  return 'I don\'t have info for the next one of those PAXes' if pax.nil?
+  message = ["#{pax.name} is"]
+  message << 'approximately' if pax.estimated
+
+  # Uncomment this once we can specify granularity in Time Lord.
+  # message << TimeLord::Period.new(@pax[:date], Time.now).to_words
+  message << pax.time_till
+  message << 'from now'
+
+  message << ' (No official date, yet)' if pax.estimated
+  message.join(' ')
 end

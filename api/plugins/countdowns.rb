@@ -19,7 +19,10 @@ module Plugin
         desc "Countdown till #{pax.pax_type}"
         get "pax/#{pax.pax_type}" do
           next_pax = get_next_pax(pax_type: pax.pax_type)
-          { text: next_pax.time_till }
+          { name: next_pax.name,
+            date: next_pax.date,
+            estimated: pax.estimated,
+            text: get_pax_time_string(pax) }
         end
       end
     end
