@@ -1,38 +1,68 @@
 [
   {
   	"type": "aus",
-  	"name": "PAX Australia",
+  	"name": "PAX Australia 2017",
   	"date": "2017-10-27 08:00:00 +11:00",
   	"estimated": false
-  }, 
-  {
-  	"type": "prime",
-  	"name": "PAX West",
-  	"date": "2018-08-31 08:00:00 -08:00",
-  	"estimated": true
   },
   {
-  	"type": "west",
-  	"name": "PAX West",
-  	"date": "2018-08-31 08:00:00 -08:00",
-  	"estimated": true
+  	"type": "aus",
+  	"name": "PAX Australia 2018",
+  	"date": "2018-10-26 08:00:00 +11:00",
+  	"estimated": false
   },
   {
-  	"type": "south",
-  	"name": "PAX South",
-  	"date": "2018-01-12 08:00:00 -06:00",
+  	"type": "dev",
+  	"name": "PAX Dev 2018",
+  	"date": "2018-08-28 08:00:00 -05:00",
   	"estimated": false
   },
   {
   	"type": "east",
-  	"name": "PAX East",
+  	"name": "PAX East 2018",
   	"date": "2018-04-05 08:00:00 -05:00",
   	"estimated": false
   },
   {
+    	"type": "east",
+    	"name": "PAX East 2019",
+    	"date": "2019-04-05 08:00:00 -05:00",
+    	"estimated": true
+  },
+  {
+  	"type": "prime",
+  	"name": "PAX West 2018",
+  	"date": "2018-08-31 08:00:00 -08:00",
+  	"estimated": false
+  },
+  {
+  	"type": "west",
+  	"name": "PAX West 2018",
+  	"date": "2018-08-31 08:00:00 -08:00",
+  	"estimated": false
+  },
+  {
+  	"type": "south",
+  	"name": "PAX South 2018",
+  	"date": "2018-01-12 08:00:00 -06:00",
+  	"estimated": false
+  },
+  {
+  	"type": "south",
+  	"name": "PAX South 2019",
+  	"date": "2019-01-12 08:00:00 -06:00",
+  	"estimated": true
+  },
+  {
   	"type": "unplugged",
-  	"name": "PAX Unplugged",
+  	"name": "PAX Unplugged 2017",
   	"date": "2017-11-17 08:00:00 -05:00",
+  	"estimated": false
+  },
+  {
+  	"type": "unplugged",
+  	"name": "PAX Unplugged 2018",
+  	"date": "2018-11-30 08:00:00 -05:00",
   	"estimated": false
   }
 ]
