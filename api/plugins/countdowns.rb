@@ -1,12 +1,8 @@
 # frozen_string_literal: true
 
-require './api/plugins/countdowns/pax'
 require './api/plugins/countdowns/helpers'
 require 'json'
 require 'grape'
-
-PAX_FILE = 'api/plugins/countdowns/pax.json'.freeze
-
 
 module Plugin
   # Class to manage countdown api requests
@@ -19,20 +15,11 @@ module Plugin
         { text: 'So many days' }
       end
 
-      def build_paxes
-        paxes = json_file_to_hash(PAX_FILE)
-        pax_list = []
-        paxes.each do |pax|
-          pax_list << Pax.new(pax['name'], pax['date'],
-                              pax['type'], pax['estimated'])
-        end
-        pax_list
-      end
-
       build_paxes.each do |pax|
-        desc 'Countdown till Pax'
+        desc "Countdown till #{pax.pax_type}"
         get "pax/#{pax.pax_type}" do
-          { text: 'So many days' }
+          next_pax = get_next_pax(type: pax.pax_type)
+          { text: next_pax.time_till }
         end
       end
     end

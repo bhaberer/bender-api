@@ -13,9 +13,7 @@ class Pax
     @estimated = estimated.to_s == true || estimated.to_s == 'true'
   end
 
-  # Instance method
-  def name_backwards
-    @name.reverse
+  def time_till
+    { date: @date, name: @name }
   end
-
 end
