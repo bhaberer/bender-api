@@ -26,5 +26,5 @@ def get_next_pax(pax_type: nil)
   paxes = build_paxes(pax_type: pax_type)
   paxes = paxes.delete_if { |pax| pax.date < Time.now }
   paxes.sort! { |a, b| a.date <=> b.date }
-  paxes
+  paxes.first
 end
