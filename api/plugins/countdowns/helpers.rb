@@ -23,6 +23,7 @@ def build_paxes(pax_type: nil)
 end
 
 def get_next_pax(pax_type: nil)
+  pax_type = nil if pax_type.strip.empty?
   paxes = build_paxes(pax_type: pax_type)
   paxes = paxes.delete_if { |pax| pax.date < Time.now }
   paxes.sort! { |a, b| a.date <=> b.date }
