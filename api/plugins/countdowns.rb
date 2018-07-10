@@ -12,7 +12,8 @@ module Plugin
     resource :countdowns do
       desc 'Countdown till Pax'
       post :pax do
-        next_pax = get_next_pax
+        pax_type = params[:text]
+        next_pax = get_next_pax(pax_type)
         { response_type: :in_channel,
           text: get_pax_time_string(next_pax) }
       end
