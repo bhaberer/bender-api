@@ -13,16 +13,16 @@ module Plugin
       desc 'Countdown till Pax'
       post :pax do
         next_pax = get_next_pax
-        { name: next_pax.name,
-          date: next_pax.date,
-          estimated: next_pax.estimated,
+        { response_type: :in_channel,
           text: get_pax_time_string(next_pax) }
       end
 
       desc 'Countdown till Pax'
       get :pax do
         next_pax = get_next_pax
-        { response_type: :in_channel,
+        { name: next_pax.name,
+          date: next_pax.date,
+          estimated: next_pax.estimated,
           text: get_pax_time_string(next_pax) }
       end
 
