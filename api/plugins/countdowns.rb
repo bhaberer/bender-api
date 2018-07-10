@@ -13,8 +13,8 @@ module Plugin
       desc 'Countdown till Pax'
       post :pax do
         pax_type = params[:text]
-        next_pax = get_next_pax(pax_type)
-        { response_type: :in_channel,
+        next_pax = get_next_pax(pax_type: pax_type)
+        { response_type: next_pax.nil? ? :ephemeral : :in_channel,
           text: get_pax_time_string(next_pax) }
       end
 
